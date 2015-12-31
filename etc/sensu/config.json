@@ -9,7 +9,16 @@
     "host": "redis.service.consul"
   },
   "api": {
-    "host": "localhost",
+    "host": "sensu-api.service.consul",
     "port": 4567
+  },
+  "checks": {
+    "test": {
+      "command": "echo -n OK - subscribed by all hosts within 'test'",
+      "subscribers": [
+        "test"
+      ],
+      "interval": 60
+    }
   }
 }
