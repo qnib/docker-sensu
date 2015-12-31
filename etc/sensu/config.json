@@ -3,7 +3,7 @@
     "host": "rabbitmq.service.consul",
     "vhost": "/sensu",
     "user": "sensu",
-    "password": "secret"
+    "password": "pass"
   },
   "redis": {
     "host": "redis.service.consul"
