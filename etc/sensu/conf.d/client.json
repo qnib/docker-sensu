@@ -1,7 +1,7 @@
 {
   "client": {
-    "name": "test",
-    "address": "localhost",
+    "name": "sensu",
+    "address": "127.0.0.1",
     "subscriptions": [
       "test"
     ]
