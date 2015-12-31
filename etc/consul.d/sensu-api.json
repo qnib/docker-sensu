@@ -1,0 +1,15 @@
+{
+  "services": [
+    {
+      "name": "sensu-api",
+      "tags": [ ],
+      "port": 4567,
+      "checks": [
+        {
+          "script": "nmap 127.0.0.1 -PN -p 4567 | grep open",
+          "interval": "5s"
+        }
+      ]
+    }
+  ]
+}

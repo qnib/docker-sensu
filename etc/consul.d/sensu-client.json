@@ -1,0 +1,14 @@
+{
+  "services": [
+    {
+      "name": "sensu-client",
+      "tags": [ ],
+      "checks": [
+        {
+          "script": "supervisorctl status sensu-client|grep RUNNING",
+          "interval": "5s"
+        }
+      ]
+    }
+  ]
+}
