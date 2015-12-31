@@ -1,0 +1,15 @@
+{
+  "rabbitmq": {
+    "host": "rabbitmq.service.consul",
+    "vhost": "/sensu",
+    "user": "sensu",
+    "password": "secret"
+  },
+  "redis": {
+    "host": "redis.service.consul"
+  },
+  "api": {
+    "host": "localhost",
+    "port": 4567
+  }
+}
