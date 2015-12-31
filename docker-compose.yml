@@ -42,6 +42,8 @@ rabbitmq:
     dns: 127.0.0.1
     hostname: rabbitmq
     container_name: rabbitmq
+    environment:
+     - RABBITMQ_VHOSTS=sensu:sensu:pass
     links:
      - consul:consul
     privileged: true
