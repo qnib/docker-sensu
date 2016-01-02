@@ -13,10 +13,6 @@ source /opt/qnib/consul/etc/bash_functions.sh
 
 echo -n "Wait for redis... "
 wait_for_srv redis
-echo -n "Wait for rabbitmq... "
-wait_for_srv rabbitmq
-echo -n "Wait for sensu-server... "
-wait_for_srv sensu-server
 
 /opt/sensu/embedded/bin/ruby /opt/sensu/bin/sensu-api \
                                 -c /etc/sensu/config.json \
