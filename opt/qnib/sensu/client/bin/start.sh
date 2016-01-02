@@ -17,6 +17,10 @@ if [ "X${SENSU_FORCE_CLIENT}" != "Xtrue" ];then
     wait_for_srv rabbitmq 120
 fi
 
+for item in $(find /etc/sensu/init.d/*.sh);do
+    sh ${item}
+done
+
 export IP_ADDR=$(ip -o -4 add|grep eth0|egrep -o "[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+")
 export HOSTNAME=$(hostname)
 consul-template -once -consul localhost:8500 -template "/etc/consul-terminal/sensu/client.json.ctmpl:/etc/sensu/conf.d/client.json"
