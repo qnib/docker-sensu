@@ -16,4 +16,3 @@ ADD /opt/qnib/sensu/server/bin/start.sh /opt/qnib/sensu/server/bin/
 ADD /opt/qnib/sensu/api/bin/start.sh /opt/qnib/sensu/api/bin/
 ADD /opt/qnib/sensu/client/bin/start.sh /opt/qnib/sensu/client/bin/
 ADD etc/consul-terminal/sensu/client.json.ctmpl /etc/consul-terminal/sensu/
-ADD bash_functions.sh /opt/qnib/consul/etc/bash_functions.sh
