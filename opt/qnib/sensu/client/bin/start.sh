@@ -2,16 +2,20 @@
 
 sleep 2
 
-if [ "X${SENSU_CLIENT}" != "Xtrue" ];then
-    echo "$SENSU_CLIENT!=true -> Do not start client"
+if [ "X${SENSU_CLIENT}" == "Xfalse" ];then
+    echo "$SENSU_CLIENT==false -> Do not start client"
     rm -f /etc/consul.d/sensu-client.json
     consul reload
     exit 0
 fi
 source /opt/qnib/consul/etc/bash_functions.sh
 
-echo -n "Wait for rabbitmq... "
-wait_for_srv rabbitmq
+if [ "X${SENSU_FORCE_CLIENT}" != "Xtrue" ];then
+    echo -n "Wait for sensu-server... "
+    wait_for_srv sensu-server 120
+    echo -n "Wait for rabbitmq... "
+    wait_for_srv rabbitmq 120
+fi
 
 export IP_ADDR=$(ip -o -4 add|grep eth0|egrep -o "[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+")
 export HOSTNAME=$(hostname)
