@@ -19,5 +19,5 @@ wait_for_srv redis
                                 -d /etc/sensu/conf.d \
                                 -e /etc/sensu/extensions \
                                 -p /var/run/sensu/sensu-api.pid \
-                                -l /var/log/sensu/sensu-api.log \
+                                -l /var/log/supervisor/sensu-api.log \
                                 -L info

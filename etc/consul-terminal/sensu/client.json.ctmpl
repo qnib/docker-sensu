@@ -1,0 +1,9 @@
+{
+  "client": {
+    "name": "{{ env "HOSTNAME" }}",
+    "address": "{{ env "IP_ADDR" }}",
+    "subscriptions": [
+      "test"
+    ]
+  }
+}
