@@ -16,5 +16,5 @@ wait_for_srv rabbitmq
                               -d /etc/sensu/conf.d \
                               -e /etc/sensu/extensions \
                               -p /var/run/sensu/sensu-server.pid \
-                              -l /var/log/sensu/sensu-server.log \
+                              -l /var/log/supervisor/sensu-server.log \ 
                               -L info

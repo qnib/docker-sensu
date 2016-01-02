@@ -9,10 +9,9 @@ ENV SENSU_CLIENT=false \
     SENSU_API=false \
     SENSU_SERVER=false
 ADD etc/sensu/config.json /etc/sensu/
-ADD etc/sensu/conf.d/*.json /etc/sensu/conf.d/
 ADD etc/supervisord.d/*.ini /etc/supervisord.d/
 ADD etc/consul.d/*.json /etc/consul.d/
-RUN chown sensu: /etc/consul.d/sensu-*.json
 ADD /opt/qnib/sensu/server/bin/start.sh /opt/qnib/sensu/server/bin/
 ADD /opt/qnib/sensu/api/bin/start.sh /opt/qnib/sensu/api/bin/
 ADD /opt/qnib/sensu/client/bin/start.sh /opt/qnib/sensu/client/bin/
+ADD etc/consul-terminal/sensu/client.json.ctmpl /etc/consul-terminal/sensu/

@@ -1,9 +1,0 @@
-{
-  "checks": {
-    "standalone-check": {
-      "command": "echo -n OK - is triggered on the client and pushes to RabbitMQ",
-      "standalone": true,
-      "interval": 60
-    }
-  }
-}
