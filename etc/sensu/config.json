@@ -12,6 +12,12 @@
     "host": "sensu-api.service.consul",
     "port": 4567
   },
+  "handlers": {
+    "slack": {
+      "command": "/opt/sensu/embedded/bin/handler-slack.rb",
+      "type": "pipe"
+    }
+  },
   "checks": {
   }
 }
