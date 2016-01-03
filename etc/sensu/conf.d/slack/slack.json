@@ -1,0 +1,12 @@
+{
+  "slack": {
+    "fields": [],
+    "icon_emoji": ":sensu:",
+    "icon_url": "http://sensuapp.org/img/sensu_logo_large-c92d73db.png",
+    "bot_name": "sensu",
+    "surround": "",
+    "message_prefix": "",
+    "channel": "#sensu",
+    "webhook_url": "https://hooks.slack.com/services/<YOUR>/<HOOK>/<HERE>"
+  }
+}
