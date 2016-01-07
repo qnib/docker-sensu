@@ -24,7 +24,7 @@ done
 export IP_ADDR=$(ip -o -4 add|grep eth0|egrep -o "[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+")
 export HOSTNAME=$(hostname)
 consul-template -once -consul localhost:8500 -template "/etc/consul-templates/sensu/client.json.ctmpl:/etc/sensu/conf.d/client.json"
-consul-template -once -consul localhost:8500 -template "/etc/consul-templates/sensu/settings.json.ctmpl:/etc/sensu/conf.d/settings.json"
+consul-template -once -consul localhost:8500 -template "/etc/consul-templates/sensu/settings.json.ctmpl:/etc/sensu/settings.json"
 
 /opt/sensu/embedded/bin/ruby /opt/sensu/bin/sensu-client \
                               -c /etc/sensu/settings.json \
