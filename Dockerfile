@@ -20,6 +20,6 @@ ADD etc/consul.d/*.json /etc/consul.d/
 ADD /opt/qnib/sensu/server/bin/start.sh /opt/qnib/sensu/server/bin/
 ADD /opt/qnib/sensu/api/bin/start.sh /opt/qnib/sensu/api/bin/
 ADD /opt/qnib/sensu/client/bin/start.sh /opt/qnib/sensu/client/bin/
-ADD etc/consul-terminal/sensu/client.json.ctmpl /etc/consul-terminal/sensu/
+ADD etc/consul-templates/sensu/*.json.ctmpl /etc/consul-templates/sensu/
 ADD etc/sensu/conf.d/slack/slack.json /etc/sensu/conf.d/slack/
 RUN /opt/sensu/embedded/bin/gem install sensu-plugins-slack
