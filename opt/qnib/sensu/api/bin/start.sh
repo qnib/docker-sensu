@@ -14,8 +14,10 @@ source /opt/qnib/consul/etc/bash_functions.sh
 echo -n "Wait for redis... "
 wait_for_srv redis
 
+consul-template -once -consul localhost:8500 -template "/etc/consul-terminal/sensu/settings.json.ctmpl:/etc/sensu/conf.d/settings.json"
+
 /opt/sensu/embedded/bin/ruby /opt/sensu/bin/sensu-api \
-                                -c /etc/sensu/config.json \
+                                -c /etc/sensu/settings.json \
                                 -d /etc/sensu/conf.d \
                                 -e /etc/sensu/extensions \
                                 -p /var/run/sensu/sensu-api.pid \

@@ -1,0 +1,23 @@
+{
+  "rabbitmq": {
+    "host": "{{ env "SENSU_RABBITMQ_HOST"}",
+    "vhost": "/{{ env "SENSU_RABBITMQ_VHOST"}",
+    "user": "{{ env "SENSU_RABBITMQ_USER"}",
+    "password": "{{ env "SENSU_RABBITMQ_PASSWD"}"
+  },
+  "redis": {
+    "host": "redis.service.consul"
+  },
+  "api": {
+    "host": "sensu-api.service.consul",
+    "port": 4567
+  },
+  "handlers": {
+    "slack": {
+      "command": "/opt/sensu/embedded/bin/handler-slack.rb",
+      "type": "pipe"
+    }
+  },
+  "checks": {
+  }
+}
