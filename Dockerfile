@@ -1,5 +1,5 @@
 ### Add Sensu to the mix
-FROM qnib/consul
+FROM qnib/syslog
 
 ADD etc/yum.repos.d/sensu.repo /etc/yum.repos.d/
 RUN yum install -y sensu nmap && \
