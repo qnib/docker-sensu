@@ -2,7 +2,7 @@
 FROM qnib/syslog
 
 ADD etc/yum.repos.d/sensu.repo /etc/yum.repos.d/
-RUN yum install -y sensu nmap && \
+RUN dnf install -y sensu nmap && \
     mkdir -p /var/run/sensu && \
     chown sensu: /var/run/sensu && \
     mkdir -p /etc/sensu/init.d/
