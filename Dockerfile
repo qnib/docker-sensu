@@ -6,7 +6,7 @@ RUN dnf install -y sensu nmap && \
     mkdir -p /var/run/sensu && \
     chown sensu: /var/run/sensu && \
     mkdir -p /etc/sensu/init.d/
-ENV SENSU_CLIENT=true \
+ENV SENSU_CLIENT=false \
     SENSU_API=false \
     SENSU_SERVER=false \
     SENSU_FORCE_CLIENT=false \
