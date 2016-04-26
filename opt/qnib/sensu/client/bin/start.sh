@@ -1,11 +1,11 @@
 #!/bin/bash
 
-sleep 2
 
 if [ "X${SENSU_CLIENT}" == "Xfalse" ];then
     echo "$SENSU_CLIENT==false -> Do not start client"
     rm -f /etc/consul.d/sensu-client.json
     consul reload
+    sleep 2
     exit 0
 fi
 source /opt/qnib/consul/etc/bash_functions.sh
