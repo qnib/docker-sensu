@@ -5,7 +5,9 @@ ADD etc/yum.repos.d/sensu.repo /etc/yum.repos.d/
 RUN dnf install -y sensu nmap && \
     mkdir -p /var/run/sensu && \
     chown sensu: /var/run/sensu && \
-    mkdir -p /etc/sensu/init.d/
+    mkdir -p /etc/sensu/init.d/ \
+ && /opt/sensu/embedded/bin/gem install sensu-plugins-influxdb
+
 ENV SENSU_CLIENT=true \
     SENSU_API=false \
     SENSU_SERVER=false \
