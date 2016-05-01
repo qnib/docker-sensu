@@ -4,6 +4,7 @@ if [ "X${SENSU_SERVER}" != "Xtrue" ];then
     echo "$SENSU_SERVER!=true -> Do not start server"
     rm -f /etc/consul.d/sensu-server.json
     consul reload
+    sleep 2
     exit 0
 fi
 source /opt/qnib/consul/etc/bash_functions.sh

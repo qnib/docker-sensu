@@ -1,11 +1,11 @@
 #!/bin/bash
 
-sleep 2
 
 if [ "X${SENSU_API}" != "Xtrue" ];then
     echo "$SENSU_API!=true -> Do not start sensu-api"
     rm -f /etc/consul.d/sensu-api.json
     consul reload
+    sleep 2
     exit 0
 fi
 

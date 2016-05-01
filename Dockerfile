@@ -8,7 +8,7 @@ RUN dnf install -y sensu nmap && \
     mkdir -p /etc/sensu/init.d/ \
  && /opt/sensu/embedded/bin/gem install sensu-plugins-influxdb
 
-ENV SENSU_CLIENT=true \
+ENV SENSU_CLIENT=false \
     SENSU_API=false \
     SENSU_SERVER=false \
     SENSU_FORCE_CLIENT=false \
